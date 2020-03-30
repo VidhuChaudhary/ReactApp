@@ -17,16 +17,19 @@ import Booknow from "./Booknow";
 
 export default function BasicExample() {
   return (
-    <div>
-      <Router>
+    <Router>
+      <div>
         <nav
           className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
           id="mainNav"
         >
           <div className="container  text-uppercase p-2">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <Link to="/" class="navbar-brand js-scroll-trigger">
               <img class="logo" src="/img/logo1.png" alt="PujariG" />
-            </a>
+            </Link>
+            {/* <a class="navbar-brand js-scroll-trigger" href="#page-top">
+              <img class="logo" src="/img/logo1.png" alt="PujariG" />
+            </a> */}
             <button
               className="navbar-toggler"
               type="button"
@@ -83,14 +86,14 @@ export default function BasicExample() {
             </div>
           </div>
         </nav>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register} />
-          <Route path="/booknow" component={Booknow} />
-        </Switch>
-      </Router>
-    </div>
+      </div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
+        <Route path="/booknow" component={Booknow} />
+      </Switch>
+    </Router>
   );
 }
 

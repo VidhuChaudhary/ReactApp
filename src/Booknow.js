@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Booknow extends Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <form>
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
