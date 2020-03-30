@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Home from "./Home";
+import Login from "./Login";
+import Register from "./Register";
 import Booknow from "./Booknow";
 
 // This site has 3 pages, all of which are rendered
@@ -15,8 +17,8 @@ import Booknow from "./Booknow";
 
 export default function BasicExample() {
   return (
-    <Router>
-      <div>
+    <div>
+      <Router>
         <nav
           className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
           id="mainNav"
@@ -63,9 +65,19 @@ export default function BasicExample() {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <Link to="/booknow" className="nav-link booknow">
-                    Book now
+                  <Link className="nav-link" to="/login">
+                    Login
                   </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/register">
+                    Register
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <button onClick={openBookNow} className="nav-link booknow">
+                    Book now
+                  </button>
                 </li>
               </ul>
             </div>
@@ -73,11 +85,17 @@ export default function BasicExample() {
         </nav>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
           <Route path="/booknow" component={Booknow} />
         </Switch>
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
+}
+
+function openBookNow() {
+  window.open("/booknow");
 }
 
 // You can think of these components as "pages"
